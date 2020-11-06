@@ -1,0 +1,26 @@
+{
+  "name": "Instagram",
+  "short_name": "Instagram",
+  "description": "Instagram is a simple way to capture and share the world's moments.",
+  "start_url": "/?utm_source=pwa_homescreen",
+  "orientation": "portrait",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "prompt_message": "Tambahkan ikon layar beranda untuk mengakses Instagram dengan mudah",
+  "icons": [
+    {
+      "src": "https://instagram.com/static/images/ico/xxhdpi_launcher.png/99cf3909d459.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "https://instagram.com/static/images/ico/xxxhdpi_launcher.png/9fc4bab7565b.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "gcm_sender_id": "524223308106",
+  "gcm_user_visible_only": true,
+  "status": "ok"
+}
