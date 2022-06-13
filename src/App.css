@@ -270,7 +270,7 @@ img {
 }
 
 .my-stories {
-  background: url('./add.png');
+  background: url('./assets/add.png');
   background-size: cover;
   background-position: center;
   background-color: #0089ff;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import profile from './profile.jpg';
+import profile from '../assets/profile.jpg';
 
 export class StoriesItem extends Component {
     render() {
