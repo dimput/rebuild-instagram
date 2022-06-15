@@ -5,6 +5,8 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Posting from './components/Posting'
 import mutiara from './assets/mutiara.jpg'
+import postingPusintek from './assets/posting/1.jpg'
+import postingPusintek2 from './assets/posting/2.jpg'
 import mumut from './assets/mumut.jpg'
 import Post from './components/Post';
 import EditCaption from './components/EditCaption';
@@ -26,6 +28,24 @@ class App extends React.Component {
           image: mutiara,
           isImageSquare: true,
           caption: "Pinky ♥ #vxvina #vexel #vexelart #designgraphic",
+          isDeleted: true
+        },
+        {
+          likes: 15062022,
+          image: postingPusintek,
+          isImageSquare: true,
+          caption: `#Repost @setjenkemenkeu
+          • • • • • •
+          Hai Sobat Setjen,
+          
+          Demi mengamankan akun kita dari bahaya kejahatan digital, salah satu cara untuk mengamankan akun kalian yaitu dengan cara mengaktifkan MFA`,
+          isDeleted: false
+        },
+        {
+          likes: 99,
+          image: postingPusintek2,
+          isImageSquare: true,
+          caption: `Hai SobatIT, masih semangat menciptakan lingkungan sehat berintegritas? Yang sehat ternyata bukan hanya badan lho, organisasi dan SDM di lingkungan kantor juga harus sehat. Simak slide di atas yuk siklus #sehatberintegritas untuk diterapkan di lingkungan kantor!`,
           isDeleted: false
         }
       ],

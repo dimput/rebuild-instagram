@@ -3,14 +3,15 @@ import profile from '../assets/profile.jpg';
 
 export class StoriesItem extends Component {
     render() {
+        const { image, username } = this.props
         return (
             <li className="has-stories">
                 <div className="stories-item">
                     <div className="gambar">
-                        <img src={profile} alt="profile" />
+                        <img src={image || profile} alt="profile" />
                     </div>
                 </div>
-                <span className="user">Dimas</span>
+                <span className="user">{username || "username"}</span>
             </li>
         )
     }
