@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import profile from '../assets/profile.jpg';
 
-export class Footer extends Component {
+export class EditCaption extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -54,66 +54,60 @@ export class Footer extends Component {
             findIcon: "M20 40C9 40 0 31 0 20S9 0 20 0s20 9 20 20-9 20-20 20zm0-37C10.6 3 3 10.6 3 20s7.6 17 17 17 17-7.6 17-17S29.4 3 20 3z",
         })
     }
+    componentDidMount() {
+        const { caption,postId } = this.props
+        this.setState({
+            postIdState: postId,
+            captionState: caption
+        })
+    }
+
+    _handleChange = (e) => {
+        this.setState({
+            captionState: e.target.value
+        })
+    }
+    _handleSave = () =>{
+        const { captionState,postIdState } = this.state
+        const { saveCaption } = this.props
+        saveCaption(captionState,postIdState)
+    }
 
     render() {
+        const { hideCard } = this.props
+        const { captionState } = this.state
         return (
-            <div className="footer">
-                <div className="footer-item">
-                    <svg
-                        aria-label="Beranda"
-                        className="footer-icon"
-                        fill="#262626"
-                        height="24"
-                        viewBox="0 0 48 48"
-                        width="24">
-                        <path d={this.state.homeIcon}>
-                        </path>
-                    </svg>
-                </div>
-                <div className="footer-item">
-                    <svg
-                        onMouseEnter={this.iconFindOnHover}
-                        onMouseLeave={this.iconFindOffHover}
-                        aria-label="Cari &amp; Jelajahi"
-                        className="footer-icon"
-                        fill="#262626"
-                        height="24"
-                        viewBox="0 0 48 48"
-                        width="24">
-                        <path d={this.state.findIcon}></path>
-                        <path d="M46.6 48.1c-.4 0-.8-.1-1.1-.4L32 34.2c-.6-.6-.6-1.5 0-2.1s1.5-.6 2.1 0l13.5 13.5c.6.6.6 1.5 0 2.1-.2.3-.6.4-1 .4z"></path>
-                    </svg>
-                </div>
-                <input type="file" name="file" id="fileToUpload" style={{ display: "none" }} accept="image/*"
-                    onChange={(e) => this._handleImageChange(e)}
-                />
-                <div className="footer-item">
-                    <label htmlFor="fileToUpload">
-                        <svg aria-label="Postingan Baru" className="footer-icon" fill="#262626" height="24" viewBox="0 0 48 48" width="24"><path d="M31.8 48H16.2c-6.6 0-9.6-1.6-12.1-4C1.6 41.4 0 38.4 0 31.8V16.2C0 9.6 1.6 6.6 4 4.1 6.6 1.6 9.6 0 16.2 0h15.6c6.6 0 9.6 1.6 12.1 4C46.4 6.6 48 9.6 48 16.2v15.6c0 6.6-1.6 9.6-4 12.1-2.6 2.5-5.6 4.1-12.2 4.1zM16.2 3C10 3 7.8 4.6 6.1 6.2 4.6 7.8 3 10 3 16.2v15.6c0 6.2 1.6 8.4 3.2 10.1 1.6 1.6 3.8 3.1 10 3.1h15.6c6.2 0 8.4-1.6 10.1-3.2 1.6-1.6 3.1-3.8 3.1-10V16.2c0-6.2-1.6-8.4-3.2-10.1C40.2 4.6 38 3 31.8 3H16.2z"></path><path d="M36.3 25.5H11.7c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5h24.6c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5z"></path><path d="M24 37.8c-.8 0-1.5-.7-1.5-1.5V11.7c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5v24.6c0 .8-.7 1.5-1.5 1.5z"></path></svg>
-                    </label>
-                </div>
-                <div className="footer-item">
-                    <svg
-                        onMouseEnter={this.iconLoveOnHover}
-                        onMouseLeave={this.iconLoveOffHover}
-                        aria-label="Aktivitas"
-                        className="footer-icon"
-                        fill="#262626"
-                        height="24"
-                        viewBox="0 0 48 48" width="24">
-                        <path
-                            d={this.state.loveIcon}>
-                        </path>
-                    </svg>
-                </div>
-                <div className="footer-item">
-                    <div className="profile-icon">
-                        <img src={profile} alt="logo" style={{ width: "18px" }} />
+            <>
+                <div className="overlay"></div>
+                <div className="card-edit-caption">
+                    <div className="post-header" style={{paddingTop:"10px",marginBottom:"10px"}}>
+                        <div className="post-item" style={{ fontWeight: "bold" }}>
+                            Edit Caption
+                        </div>
+                        <div className="post-item" style={{ cursor: "pointer" }} onClick={() => hideCard()}>
+                            <svg aria-label="Tutup" color="#000000" fill="#000000" height="18" role="img" viewBox="0 0 48 48" width="18"><title>Tutup</title><path clipRule="evenodd" d="M41.8 9.8L27.5 24l14.2 14.2c.6.6.6 1.5 0 2.1l-1.4 1.4c-.6.6-1.5.6-2.1 0L24 27.5 9.8 41.8c-.6.6-1.5.6-2.1 0l-1.4-1.4c-.6-.6-.6-1.5 0-2.1L20.5 24 6.2 9.8c-.6-.6-.6-1.5 0-2.1l1.4-1.4c.6-.6 1.5-.6 2.1 0L24 20.5 38.3 6.2c.6-.6 1.5-.6 2.1 0l1.4 1.4c.6.6.6 1.6 0 2.2z" fillRule="evenodd"></path></svg>
+                        </div>
+                    </div>
+                    <div className="posting-comment">
+                        <div className="comment-item">
+                            <span className="comment-username d-flex vertical-align-center">
+                                <div className="profile-icon-md borderless">
+                                    <img src={profile} alt="logo" style={{ width: "26px" }} />
+                                </div>
+                                <div style={{ marginLeft: "10px" }}> dimasputray</div>
+                            </span>
+                        </div>
+                    </div>
+                    <div className="posting-comment">
+                        <textarea autoFocus={true} maxLength={250} className='input-comment' placeholder='Tulis keterangan...' onChange={(e) => { this._handleChange(e) }} value={captionState} />
+                    </div>
+                    <div className="post-footer">
+                        <button className='btn-primary' onClick={() => this._handleSave()}>Simpan</button>
                     </div>
                 </div>
-            </div>
+            </>
         )
     }
 }
 
-export default Footer
+export default EditCaption

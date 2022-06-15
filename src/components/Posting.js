@@ -11,16 +11,9 @@ export class Posting extends Component {
             isLove: false,
             likes: 0,
             caption: "",
-            image: ""
+            image: "",
+            isShowMore: false
         };
-    }
-
-    componentDidMount() {
-        this.setState({
-            likes: this.props.likes,
-            image: this.props.image,
-            caption: this.props.caption,
-        })
     }
 
     iconLoveOnHover = () => {
@@ -30,6 +23,12 @@ export class Posting extends Component {
                 colorLove: "#ed4956"
             })
         }
+    }
+
+    componentDidMount(){
+        this.setState({
+            likes : this.props.likes
+        })
     }
     iconLoveOffHover = () => {
         if (!this.state.isLove) {
@@ -89,7 +88,17 @@ export class Posting extends Component {
             }, 251);
         }
     }
+
+    toggleMore = () => {
+        const { isShowMore } = this.state
+        this.setState({
+            isShowMore: !isShowMore
+        })
+    }
+
     render() {
+        const { handleDelete,handleShowEditCaption,keyPosting,caption,image } = this.props
+        const {isShowMore,likes} = this.state
         return (
             <div className="posting">
                 <div className="posting-title">
@@ -97,7 +106,13 @@ export class Posting extends Component {
                         <img src={profile} alt="profile" />
                     </div>
                     <div className="posting-username">dimasputray</div>
-                    <div className="posting-more">...</div>
+                    <div className="posting-more" onClick={() => this.toggleMore()}>...</div>
+                    {isShowMore &&
+                            <div className="posting-more-dropdown">
+                                <div className='posting-more-dropdown-item' onClick={() => handleShowEditCaption(caption,keyPosting)}>Edit Caption</div>
+                                <div className='posting-more-dropdown-item' onClick={() => handleDelete(this.props.keyPosting)}>Hapus</div>
+                            </div>
+                    }
                 </div>
                 <div className={this.props.isImageSquare ? "posting-content square" : "posting-content"} onClick={this.handleDoubleClickPhone} onDoubleClick={this.onDoubleClick}>
                     <div className="love-tap" style={{ transform: "scale(" + this.state.scale + ")" }}>
@@ -114,7 +129,7 @@ export class Posting extends Component {
                             <path fill="url(#grad2)" d="M34.6 3.1c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5s1.1-.2 1.6-.5c1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"></path>
                         </svg>
                     </div>
-                    <img src={this.state.image} alt="content" />
+                    <img src={image} alt="content" />
                 </div>
                 <div className="posting-button">
                     <svg
@@ -129,17 +144,19 @@ export class Posting extends Component {
                     </div>
                 </div>
                 <div className="posting-likes">
-                    {this.state.likes.toLocaleString()} likes
+                    {likes.toLocaleString()} likes
                 </div>
                 <div className="posting-comment">
                     <div className="comment-item">
                         <span className="comment-username">dimasputray </span>
-                        {this.state.caption}
+                        {caption}
                     </div>
                 </div>
-                <div className="posting-all-comment">
-                    View all 4,890 comments
-                </div>
+                {likes > 2 ?
+                    <div className="posting-all-comment">
+                        View all 4,890 comments
+                    </div>
+                    : null}
                 <div className="posting-timepost">
                     September 23, 2017
                 </div>
