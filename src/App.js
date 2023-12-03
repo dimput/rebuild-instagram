@@ -10,27 +10,52 @@ import postingPusintek2 from './assets/posting/2.jpg'
 import mumut from './assets/mumut.jpg'
 import Post from './components/Post';
 import EditCaption from './components/EditCaption';
+import avatar from './assets/profile.jpg';
+import lkpp_ri_avatar from './assets/profile/lkpp.jpg';
+import inabuyer_ev from './assets/posting/inabuyer_ev.jpg';
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       posts: [
+        
         {
+          isVerified:true,
+          avatar:lkpp_ri_avatar,
+          username:'lkpp_ri',
+          likes: 124,
+          image: inabuyer_ev,
+          isImageSquare: true,
+          caption: `Haloo Sobat Kredibel..
+
+          Lembaga Kebijakan Pengadaan Barang/Jasa Pemerintah (LKPP) menerima penghargaan dari Asosiasi Industri Sepeda Motor Listrik (AISMOLI) sebagai Lembaga yang Mendorong dan Membantu Proses Belanja Pemerintah untuk Sepeda Motor Listrik dengan mudah melalui Katalog Elektronik. Penghargaan tersebut diberikan dalam event Inabuyer EV Expo 2023 pada Kamis (30/11). Penghargaan diterima langsung oleh Kepala LKPP Hendrar Prihadi.`,
+          timePost:'Desember 05, 2023',
+          isDeleted: false
+        },
+        {
+          avatar:avatar,
+          username:'dimasputray',
           likes: 1000,
           image: mumut,
           isImageSquare: false,
           caption: "あなたは知っていますか？あなたはとてもきれいです",
+          timePost:'September 23, 2017',
           isDeleted: true
         },
         {
+          avatar:avatar,
+          username:'dimasputray',
           likes: 90000000,
           image: mutiara,
           isImageSquare: true,
           caption: "Pinky ♥ #vxvina #vexel #vexelart #designgraphic",
+          timePost:'September 23, 2017',
           isDeleted: true
         },
         {
+          avatar:avatar,
+          username:'dimasputray',
           likes: 15062022,
           image: postingPusintek,
           isImageSquare: true,
@@ -39,15 +64,19 @@ class App extends React.Component {
           Hai Sobat Setjen,
           
           Demi mengamankan akun kita dari bahaya kejahatan digital, salah satu cara untuk mengamankan akun kalian yaitu dengan cara mengaktifkan MFA`,
+          timePost:'September 23, 2017',
           isDeleted: false
         },
         {
+          avatar:avatar,
+          username:'dimasputray',
           likes: 99,
           image: postingPusintek2,
           isImageSquare: true,
           caption: `Hai SobatIT, masih semangat menciptakan lingkungan sehat berintegritas? Yang sehat ternyata bukan hanya badan lho, organisasi dan SDM di lingkungan kantor juga harus sehat. Simak slide di atas yuk siklus #sehatberintegritas untuk diterapkan di lingkungan kantor!`,
+          timePost:'September 23, 2017',
           isDeleted: false
-        }
+        },
       ],
       postToUpload: {},
       postImageIsShow: false,
@@ -74,6 +103,9 @@ class App extends React.Component {
     dataToUpdate.push({
       likes: 0,
       image: data.image,
+      avatar:avatar,
+      username:'dimasputray',
+      timePost:'Desember 5, 2023',
       isImageSquare: data.isImageSquare,
       caption: data.caption,
       isDeleted: data.isDeleted
@@ -130,10 +162,14 @@ class App extends React.Component {
         return (
           <Posting
             key={i}
+            isVerified={data.isVerified}
+            avatar={data.avatar}
+            username={data.username}
             keyPosting={i}
             likes={data.likes}
             image={data.image}
             isImageSquare={data.isImageSquare}
+            timePost={data.timePost}
             caption={data.caption}
             handleDelete={(id) => this.deletePost(id)}
             handleShowEditCaption={(capt, id) => this._handleShowEditCaption(capt, id)} />

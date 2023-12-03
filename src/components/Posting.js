@@ -47,6 +47,8 @@ export class Posting extends Component {
                 isLove: false,
                 likes: this.state.likes - 1
             });
+        }else{
+            this.onDoubleClick()
         }
     }
 
@@ -97,15 +99,18 @@ export class Posting extends Component {
     }
 
     render() {
-        const { handleDelete,handleShowEditCaption,keyPosting,caption,image } = this.props
+        const { handleDelete,handleShowEditCaption,keyPosting,caption,image,avatar,username,isVerified,timePost } = this.props
         const {isShowMore,likes} = this.state
         return (
             <div className="posting">
                 <div className="posting-title">
                     <div className="posting-profile">
-                        <img src={profile} alt="profile" />
+                        <img src={avatar} alt="profile" />
                     </div>
-                    <div className="posting-username">dimasputray</div>
+                    <div className="posting-username">
+                        {username}
+                        {isVerified && <svg aria-label="Sudah Diverifikasi" fill="rgb(0, 149, 246)" height="12" role="img" viewBox="0 0 40 40" width="12" style={{marginLeft:'5px',marginRight:'7px',marginBottom:'-2px'}}><title>Sudah Diverifikasi</title><path d="M19.998 3.094 14.638 0l-2.972 5.15H5.432v6.354L0 14.64 3.094 20 0 25.359l5.432 3.137v5.905h5.975L14.638 40l5.36-3.094L25.358 40l3.232-5.6h6.162v-6.01L40 25.359 36.905 20 40 14.641l-5.248-3.03v-6.46h-6.419L25.358 0l-5.36 3.094Zm7.415 11.225 2.254 2.287-11.43 11.5-6.835-6.93 2.244-2.258 4.587 4.581 9.18-9.18Z" fill-rule="evenodd"></path></svg>}
+                    </div>
                     <div className="posting-more" onClick={() => this.toggleMore()}>...</div>
                     {isShowMore &&
                             <div className="posting-more-dropdown">
@@ -148,7 +153,10 @@ export class Posting extends Component {
                 </div>
                 <div className="posting-comment">
                     <div className="comment-item">
-                        <span className="comment-username">dimasputray </span>
+                        <span className="comment-username" style={{marginRight:'5px'}}>
+                            {username} 
+                        </span>
+                        {isVerified && <svg aria-label="Sudah Diverifikasi" fill="rgb(0, 149, 246)" height="12" role="img" viewBox="0 0 40 40" width="12" style={{marginRight:'7px',marginBottom:'-2px'}}><title>Sudah Diverifikasi</title><path d="M19.998 3.094 14.638 0l-2.972 5.15H5.432v6.354L0 14.64 3.094 20 0 25.359l5.432 3.137v5.905h5.975L14.638 40l5.36-3.094L25.358 40l3.232-5.6h6.162v-6.01L40 25.359 36.905 20 40 14.641l-5.248-3.03v-6.46h-6.419L25.358 0l-5.36 3.094Zm7.415 11.225 2.254 2.287-11.43 11.5-6.835-6.93 2.244-2.258 4.587 4.581 9.18-9.18Z" fill-rule="evenodd"></path></svg>}
                         {caption}
                     </div>
                 </div>
@@ -158,7 +166,7 @@ export class Posting extends Component {
                     </div>
                     : null}
                 <div className="posting-timepost">
-                    September 23, 2017
+                    {timePost}
                 </div>
             </div>
         )

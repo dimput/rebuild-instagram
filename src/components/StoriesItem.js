@@ -11,7 +11,7 @@ export class StoriesItem extends Component {
                         <img src={image || profile} alt="profile" />
                     </div>
                 </div>
-                <span className="user">{username || "username"}</span>
+                <span className="user">{username? (username.length>9?username.substring(0,9)+'..':username): "username"}</span>
             </li>
         )
     }

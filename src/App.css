@@ -155,7 +155,7 @@
 
 .header-right {
   float: right;
-  padding-right: 15px;
+  padding-right: 20px;
 }
 
 .stories {
@@ -312,10 +312,11 @@ img {
 }
 
 .posting-content img {
-  position: absolute;
-  left: 50%;
+  /* position: absolute; */
+  /* left: 50%; */
   height: 384px;
-  margin-left: -304px;
+  max-width: 384px;
+  /* margin-left: -304px; */
 }
 .posting-content.square img {
   position: relative;
