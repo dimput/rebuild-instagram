@@ -324,6 +324,13 @@ img {
   height: 384px;
   margin-left: 0px;
 }
+.posting-content.not-square img {
+  position: absolute;
+  left: 0%;
+  width: 100%;
+  height: unset;
+  margin-left: 0px;
+}
 
 .posting-content {
   position: relative;

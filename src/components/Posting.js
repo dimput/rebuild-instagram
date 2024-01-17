@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+const batasCaption = 200
 export class Posting extends Component {
     constructor(props) {
         super(props)
@@ -11,7 +12,8 @@ export class Posting extends Component {
             likes: 0,
             caption: '',
             image: '',
-            isShowMore: false
+            isShowMore: false,
+            isSelengkapnya: false
         }
     }
 
@@ -94,6 +96,12 @@ export class Posting extends Component {
         })
     }
 
+    handleClickCaption = () => {
+        const { isSelengkapnya } = this.state
+        this.setState({
+            isSelengkapnya: !isSelengkapnya
+        })
+    }
     render() {
         const {
             handleDelete,
@@ -106,7 +114,7 @@ export class Posting extends Component {
             isVerified,
             timePost
         } = this.props
-        const { isShowMore, likes } = this.state
+        const { isShowMore, likes, isSelengkapnya } = this.state
         const renderHTML = (rawHTML) =>
             React.createElement('div', { dangerouslySetInnerHTML: { __html: rawHTML } })
         return (
@@ -161,7 +169,9 @@ export class Posting extends Component {
                 </div>
                 <div
                     className={
-                        this.props.isImageSquare ? 'posting-content square' : 'posting-content'
+                        this.props.isImageSquare
+                            ? 'posting-content square'
+                            : 'posting-content not-square'
                     }
                     onClick={this.handleDoubleClickPhone}
                     onDoubleClick={this.onDoubleClick}
@@ -257,7 +267,11 @@ export class Posting extends Component {
                 </div>
                 <div className="posting-likes">{likes.toLocaleString()} likes</div>
                 <div className="posting-comment">
-                    <div className="comment-item">
+                    <div
+                        className="comment-item"
+                        style={{ cursor: 'pointer' }}
+                        onClick={() => this.handleClickCaption()}
+                    >
                         <span className="comment-username" style={{ marginRight: '5px' }}>
                             {username}
                         </span>
@@ -278,7 +292,14 @@ export class Posting extends Component {
                                 ></path>
                             </svg>
                         )}{' '}
-                        {renderHTML(caption)}
+                        {caption.length > 300 && !isSelengkapnya
+                            ? renderHTML(
+                                  caption.slice(
+                                      0,
+                                      batasCaption + caption.slice(batasCaption).search(' ')
+                                  ) + '... <span style="color:rgba(0,0,0,0.5)">Selengkapnya</span>'
+                              )
+                            : renderHTML(caption)}
                     </div>
                 </div>
                 {likes > 2 ? (

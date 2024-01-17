@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import profile from '../assets/profile.jpg';
-import pusdiklat from '../assets/profile/pusdiklat.jpg';
-import lkpp from '../assets/profile/lkpp.jpg';
-import inspektorat from '../assets/profile/inspektorat.jpg';
-import hukum from '../assets/profile/hukum.jpg';
-import eproc from '../assets/profile/eproc.jpg';
-import kemensosri from '../assets/profile/kemensosri.jpg';
-import kemenkeuri from '../assets/profile/kemenkeuri.jpg';
-import StoriesItem from '../components/StoriesItem';
+import profile from '../assets/profile.jpg'
+import bpsdmpupr from '../assets/profile/bpsdmpupr.jpg'
+import pupr from '../assets/profile/pupr.jpg'
+import pfid from '../assets/profile/pfid.jpg'
+import kemensosri from '../assets/profile/kemensosri.jpg'
+import kemendagri from '../assets/profile/kemendagri.jpg'
+import kemenkeuri from '../assets/profile/kemenkeuri.jpg'
+import bapenas from '../assets/profile/bapenas.jpg'
+import StoriesItem from '../components/StoriesItem'
 
 export class Stories extends Component {
     render() {
@@ -18,19 +18,16 @@ export class Stories extends Component {
                         <div className="stories-item">
                             <img src={profile} alt="profile" />
                         </div>
-                        <div className="my-stories">
-                        </div>
+                        <div className="my-stories"></div>
                         <span className="user">Dimas</span>
                     </li>
-                    <StoriesItem image={lkpp} username={"lkpp_ri"}/>
-                    <StoriesItem image={eproc} username={"eproc.lkpp"}/>
-                    <StoriesItem image={pusdiklat} username={"puslatsdmpbj_lkpp"}/>
-                    <StoriesItem image={inspektorat} username={"inspektorat_lkpp"}/>
-                    <StoriesItem image={hukum} username={"bhosdm_lkpp"}/>
-                    <StoriesItem image={kemenkeuri} username={"kemenkeuri"}/>
-                    <StoriesItem image={kemensosri} username={"kemensosri"}/>
-                    <StoriesItem/>
-                    <StoriesItem/>
+                    <StoriesItem image={pupr} username={'kemenpupr'} />
+                    <StoriesItem image={pfid} username={'pfid'} />
+                    <StoriesItem image={kemenkeuri} username={'kemenkeuri'} />
+                    <StoriesItem image={bapenas} username={'bapenas'} />
+                    <StoriesItem image={kemendagri} username={'kemendagri'} />
+                    <StoriesItem image={kemensosri} username={'kemensosri'} />
+                    <StoriesItem image={bpsdmpupr} username={'pupr_bpsdm'} />
                 </ul>
             </div>
         )

@@ -11,10 +11,10 @@ import mumut from './assets/mumut.jpg'
 import Post from './components/Post'
 import EditCaption from './components/EditCaption'
 import avatar from './assets/profile.jpg'
-import lkpp_ri_avatar from './assets/profile/lkpp.jpg'
-import eproc from './assets/posting/eproc.jpg'
-import eprocLogo from './assets/profile/eproc.jpg'
-import inabuyer_ev from './assets/posting/inabuyer_ev.jpg'
+import pupr from './assets/profile/pupr.jpg'
+import pfidPost from './assets/posting/pfid.jpg'
+import pfid from './assets/profile/pfid.jpg'
+import puprPost from './assets/posting/pupr.jpg'
 
 class App extends React.Component {
     constructor(props) {
@@ -23,38 +23,52 @@ class App extends React.Component {
             posts: [
                 {
                     isVerified: true,
-                    avatar: lkpp_ri_avatar,
-                    username: 'lkpp_ri',
+                    avatar: pupr,
+                    username: 'kemenpupr',
                     likes: 124,
-                    image: inabuyer_ev,
-                    isImageSquare: true,
-                    caption: `Haloo Sobat Kredibel..<br>
-                    
-          Lembaga Kebijakan Pengadaan Barang/Jasa Pemerintah (LKPP) menerima penghargaan dari Asosiasi Industri Sepeda Motor Listrik (AISMOLI) sebagai Lembaga yang Mendorong dan Membantu Proses Belanja Pemerintah untuk Sepeda Motor Listrik dengan mudah melalui Katalog Elektronik. Penghargaan tersebut diberikan dalam event Inabuyer EV Expo 2023 pada Kamis (30/11). Penghargaan diterima langsung oleh Kepala LKPP Hendrar Prihadi.`,
-                    timePost: 'Desember 05, 2023',
+                    image: puprPost,
+                    isImageSquare: false,
+                    caption: `Menteri PUPR Basuki Hadimuljono meninjau pembangunan Instalasi Pengolahan Air Limbah (IPAL) dan Tempat Pengolahan Sampah Terpadu (TPST) di Ibu Kota Negara (IKN) Nusantara, Kalimantan Timur pada Selasa (16/1).<br>
+                    <br>
+                    “Jangan sampai ada keterlambatan dalam konstruksi IPAL maupun TPST. Keduanya harus bisa mulai beroperasi Agustus tahun 2024 ini,” ujar Menteri Basuki.<br>
+                    <br>
+                    Untuk mengolah air limbah di Kawasan Inti Pusat Pemerintahan (KIPP) IKN Nusantara dibangun IPAL 1,2 dan 3 pada 3 lokasi berkapasitas total 5.000 m3/hari.<br>
+                    <br>
+                    Pembangunan IPAL ini dimulai awal Desember 2023, dengan progres 14,56%.<br>
+                    <br>
+                    Teknologi “Moving Bed Biofilm Reactor” diterapkan di IPAL ini untuk mencapai influen yang memenuhi syarat bakumutu sebelum dialirkan ke badan air/sungai.<br>
+                    <br>
+                    Langkah ini sekaligus penerapan prinsip pembangunan IKN Nusantara sebagai kota pintar berkelanjutan (smart sustainable forest city), dengan pemenuhan syarat baku mutu air limbah sesuai yang ditetapkan dalam “Basic Engineering Design” pembangunan IKN Nusantara.<br>
+                    <br>
+                    “Instalasi Pengolahan Air Limbah” IKN Nusantara dibangun terintegrasi dengan “Tempat Pengolahan Sampah Terpadu” untuk mensinergikan pengelolaan sanitasi dalam satu lokasi.<br>
+                    <br>
+                    <span style="color:blue;cursor:pointer;">#SigapMembangunNegeri</span>`,
+                    timePost: 'Januari 17, 2024',
                     isDeleted: false
                 },
                 {
-                    avatar: eprocLogo,
-                    username: 'eproc.lkpp',
+                    avatar: pfid,
+                    username: 'pupr_pfid',
                     likes: 1000,
-                    image: eproc,
+                    image: pfidPost,
                     isImageSquare: true,
-                    caption: `Halo Sobat SiRUP!📢<br>
+                    caption: `Halo #MitraDaerah, Pusat Fasilitasi Infrastruktur Daerah Bidang Perumahan dan Permukiman, Kementerian PUPR saat ini sedang membutuhkan Konsultan Individu untuk Web Developer. <br>
                     <br>
-                    Kami punya kabar penting untuk pengguna SiRUP yang WAJIB DIKETAHUI!⚠️<br>
+                    Simak Informasi persyaratan teknis dan administrasi dapat dilihat pada postingan di atas ya! <br>
                     <br>
-                    Dalam menghadapi pengembangan aplikasi SIPD RI oleh Kemendagri, kami telah menyesuaikan aplikasi SiRUP untuk memaksimalkan pengalaman Anda. Dengan integrasi terbaru dari SIPD RI, kami berharap pengalaman Anda semakin lancar dan efisien.<br>
+                    Bagi teman-teman yang memenuhi kriteria, segera daftarkan diri kalian dengan mengirimkan dokumen pendukung dan surat lamaran melalui email berikut : perkim.pe@gmail.com cc : leviana.okvianty@pu.go.id dengan subjek: KI_PERKIM_[NAMA] <br>
                     <br>
-                    Ingin tahu skema integrasi yang lebih lengkap? Kunjungi bit.ly/InfografikIntegrasiSIPDRI (klik pada IG Story kami)<br>
+                    (pendaftaran paling lambat ditutup pada tanggal 19 Januari 2024) <br>
                     <br>
-                    #SiRUP
-                    #IntegrasiSIPDRI`,
+                    <span style="color:blue;cursor:pointer;">#pupr</span> <span style="color:blue;cursor:pointer;">#kementerianpupr</span> <br>
+                     <span style="color:blue;cursor:pointer;">#puprsigapmembangunnegeri</span> <br>
+                     <span style="color:blue;cursor:pointer;">#puprsiapmelayani</span> <br>
+                     <span style="color:blue;cursor:pointer;">#pfidpupr</span> <br>`,
                     timePost: 'October 18, 2023',
                     isDeleted: false
                 },
                 {
-                    avatar: eproc,
+                    avatar: pfid,
                     username: 'dimasputray',
                     likes: 1000,
                     image: mumut,
