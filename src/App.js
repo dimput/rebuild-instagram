@@ -5,16 +5,18 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Posting from './components/Posting'
 import mutiara from './assets/mutiara.jpg'
-import postingPusintek from './assets/posting/1.jpg'
+import somethincClinicPost from './assets/posting/somethinc_clinic.jpg'
 import postingPusintek2 from './assets/posting/2.jpg'
 import mumut from './assets/mumut.jpg'
 import Post from './components/Post'
 import EditCaption from './components/EditCaption'
 import avatar from './assets/profile.jpg'
-import pupr from './assets/profile/pupr.jpg'
-import pfidPost from './assets/posting/pfid.jpg'
+import beautyHaulPost from './assets/posting/beauty_haul_post.jpg'
 import pfid from './assets/profile/pfid.jpg'
-import puprPost from './assets/posting/pupr.jpg'
+import somethinc from './assets/profile/somethinc.jpg'
+import somethinc_clinic from './assets/profile/somethinc_clinic.jpg'
+import beautyhaul from './assets/profile/beauty_haul.jpg'
+import somethincPost1 from './assets/posting/somethinc_1.jpg'
 
 class App extends React.Component {
     constructor(props) {
@@ -23,47 +25,27 @@ class App extends React.Component {
             posts: [
                 {
                     isVerified: true,
-                    avatar: pupr,
-                    username: 'somethinc',
+                    avatar: somethinc,
+                    username: 'somethincofficial',
                     likes: 124,
-                    image: puprPost,
+                    image: somethincPost1,
                     isImageSquare: false,
-                    caption: `test Menteri PUPR Basuki Hadimuljono meninjau pembangunan Instalasi Pengolahan Air Limbah (IPAL) dan Tempat Pengolahan Sampah Terpadu (TPST) di Ibu Kota Negara (IKN) Nusantara, Kalimantan Timur pada Selasa (16/1).<br>
-                    <br>
-                    “Jangan sampai ada keterlambatan dalam konstruksi IPAL maupun TPST. Keduanya harus bisa mulai beroperasi Agustus tahun 2024 ini,” ujar Menteri Basuki.<br>
-                    <br>
-                    Untuk mengolah air limbah di Kawasan Inti Pusat Pemerintahan (KIPP) IKN Nusantara dibangun IPAL 1,2 dan 3 pada 3 lokasi berkapasitas total 5.000 m3/hari.<br>
-                    <br>
-                    Pembangunan IPAL ini dimulai awal Desember 2023, dengan progres 14,56%.<br>
-                    <br>
-                    Teknologi “Moving Bed Biofilm Reactor” diterapkan di IPAL ini untuk mencapai influen yang memenuhi syarat bakumutu sebelum dialirkan ke badan air/sungai.<br>
-                    <br>
-                    Langkah ini sekaligus penerapan prinsip pembangunan IKN Nusantara sebagai kota pintar berkelanjutan (smart sustainable forest city), dengan pemenuhan syarat baku mutu air limbah sesuai yang ditetapkan dalam “Basic Engineering Design” pembangunan IKN Nusantara.<br>
-                    <br>
-                    “Instalasi Pengolahan Air Limbah” IKN Nusantara dibangun terintegrasi dengan “Tempat Pengolahan Sampah Terpadu” untuk mensinergikan pengelolaan sanitasi dalam satu lokasi.<br>
-                    <br>
-                    <span style="color:blue;cursor:pointer;">#SigapMembangunNegeri</span>`,
+                    caption: `[SAVE & SHARE] Skincare match made in heaven:
+                    Skin Booster + Calm Down Moisturizer 💯✨
+                    
+                    Pair them both & discover their greatness on your skin now!`,
                     timePost: 'Januari 17, 2024',
                     isDeleted: false
                 },
                 {
-                    avatar: pfid,
-                    username: 'pupr_pfid',
+                    isVerified: true,
+                    avatar: beautyhaul,
+                    username: 'beautyhaulofficial',
                     likes: 1000,
-                    image: pfidPost,
+                    image: beautyHaulPost,
                     isImageSquare: true,
-                    caption: `Halo #MitraDaerah, Pusat Fasilitasi Infrastruktur Daerah Bidang Perumahan dan Permukiman, Kementerian PUPR saat ini sedang membutuhkan Konsultan Individu untuk Web Developer. <br>
-                    <br>
-                    Simak Informasi persyaratan teknis dan administrasi dapat dilihat pada postingan di atas ya! <br>
-                    <br>
-                    Bagi teman-teman yang memenuhi kriteria, segera daftarkan diri kalian dengan mengirimkan dokumen pendukung dan surat lamaran melalui email berikut : perkim.pe@gmail.com cc : leviana.okvianty@pu.go.id dengan subjek: KI_PERKIM_[NAMA] <br>
-                    <br>
-                    (pendaftaran paling lambat ditutup pada tanggal 19 Januari 2024) <br>
-                    <br>
-                    <span style="color:blue;cursor:pointer;">#pupr</span> <span style="color:blue;cursor:pointer;">#kementerianpupr</span> <br>
-                     <span style="color:blue;cursor:pointer;">#puprsigapmembangunnegeri</span> <br>
-                     <span style="color:blue;cursor:pointer;">#puprsiapmelayani</span> <br>
-                     <span style="color:blue;cursor:pointer;">#pfidpupr</span> <br>`,
+                    caption: `Lagi cari bodycare & haircare produk? Yuk checkout di
+                    <span style="color:blue;cursor:pointer;">#BeautyHaulAja</span> lagi ada promo Shower Time Essentials diskon up to 40% 👀💙✨`,
                     timePost: 'October 18, 2023',
                     isDeleted: false
                 },
@@ -88,16 +70,15 @@ class App extends React.Component {
                     isDeleted: true
                 },
                 {
-                    avatar: avatar,
-                    username: 'dimasputray',
+                    avatar: somethinc_clinic,
+                    username: 'somethinc_clinic',
                     likes: 15062022,
-                    image: postingPusintek,
+                    image: somethincClinicPost,
                     isImageSquare: true,
-                    caption: `#Repost @setjenkemenkeu
-          • • • • • •
-          Hai Sobat Setjen,
-          
-          Demi mengamankan akun kita dari bahaya kejahatan digital, salah satu cara untuk mengamankan akun kalian yaitu dengan cara mengaktifkan MFA`,
+                    caption: `Want to restore your skin's youth? Ini tandanya kamu harus coba Skin Quality &amp; Regenerating (Nucleofil) Injection.<br><br>
+                    ✔️Memberikan lifting effect pada wajah<br>
+                    ✔️Meningkatkan kualitas kesehatan kulit secara keseluruhan<br>
+                    ✔️Ideal untuk kulit yang mulai kendur &amp; kehilangan hidrasi<br><br>Swipe untuk lihat promo spesialnya ➡️`,
                     timePost: 'September 23, 2017',
                     isDeleted: false
                 },
