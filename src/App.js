@@ -28,7 +28,7 @@ class App extends React.Component {
                     likes: 124,
                     image: puprPost,
                     isImageSquare: false,
-                    caption: `Menteri PUPR Basuki Hadimuljono meninjau pembangunan Instalasi Pengolahan Air Limbah (IPAL) dan Tempat Pengolahan Sampah Terpadu (TPST) di Ibu Kota Negara (IKN) Nusantara, Kalimantan Timur pada Selasa (16/1).<br>
+                    caption: `test Menteri PUPR Basuki Hadimuljono meninjau pembangunan Instalasi Pengolahan Air Limbah (IPAL) dan Tempat Pengolahan Sampah Terpadu (TPST) di Ibu Kota Negara (IKN) Nusantara, Kalimantan Timur pada Selasa (16/1).<br>
                     <br>
                     “Jangan sampai ada keterlambatan dalam konstruksi IPAL maupun TPST. Keduanya harus bisa mulai beroperasi Agustus tahun 2024 ini,” ujar Menteri Basuki.<br>
                     <br>
