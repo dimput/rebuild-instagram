@@ -24,7 +24,7 @@ class App extends React.Component {
                 {
                     isVerified: true,
                     avatar: pupr,
-                    username: 'kemenpupr',
+                    username: 'somethinc',
                     likes: 124,
                     image: puprPost,
                     isImageSquare: false,
